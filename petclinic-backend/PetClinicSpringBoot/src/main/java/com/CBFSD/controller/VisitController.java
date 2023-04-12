@@ -16,18 +16,18 @@ import com.CBFSD.service.VisitService;
 
 @RestController
 @RequestMapping("visit")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "http://18.220.94.38:4200/")
 public class VisitController {
 
 	@Autowired
 	VisitService visitService;
-	
-	@PostMapping(value = "storeVisit",consumes = MediaType.APPLICATION_JSON_VALUE)
+
+	@PostMapping(value = "storeVisit", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeVisit(@RequestBody Visit visit) {
 		return visitService.storeVisit(visit);
 	}
-	
-	@GetMapping(value = "findAllVisits",produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@GetMapping(value = "findAllVisits", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Visit> findAllVisits() {
 		return visitService.findVisits();
 	}
