@@ -1,0 +1,102 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Register A Pet</h3>
+            <form [formGroup]="visitDetails" (ngSubmit)="storeVisit()">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="firstName" formControlName="petName" class="form-control form-control-lg" />
+                    <label class="form-label" for="firstName">Pet Name</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <select type="text" id="lastName" formControlName="petType" class="form-control form-control-lg">
+                      <option selected>Select</option>
+                      <option>Cat</option>
+                      <option>Dog</option>
+                      <option>Fish</option>
+                      <option>Hamster</option>
+                      <option>Kitten</option>
+                      <option>Mouse</option>
+                      <option>Parrot</option>
+                      <option>Puppy</option>
+                      <option>Rabbit</option>
+                      <option>Turtle</option>
+                    </select>
+                    <label class="form-label" for="lastName">Pet Type</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <b>Owner Information</b>
+              <br>
+              <br>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="text" id="firstName" formControlName="ownerFirstName" class="form-control form-control-lg" />
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="text" id="lastName" formControlName="ownerLastName" class="form-control form-control-lg" />
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="email" id="email" formControlName="ownerEmail"  class="form-control form-control-lg" />
+                    <label class="form-label" for="email">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="tel" id="phoneNumber" formControlName="ownerPhoneNumber" class="form-control form-control-lg" />
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+
+                  <input type="text" class="form-control form-control-lg" formControlName="visitDetails" name = "details" />
+                  <label class="form-label select-label">Details</label>
+
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <input class="btn btn-pinky btn-lg" type="submit" value="Save" />
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

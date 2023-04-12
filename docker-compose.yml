@@ -1,0 +1,41 @@
+version: "3.7"
+services:
+  database-petclinic:
+    image: mysql:latest
+    container_name: database-petclinic
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: petclinic   
+      MYSQL_USER: hayk
+      MYSQL_PASSWORD: hayk
+    ports:
+      - 3307:3306
+    networks:
+      - petclinic_default
+
+  petclinic-springboot:
+    build:
+      context: ./petclinic-backend/PetClinicSpringBoot
+      dockerfile: Dockerfile
+    container_name: petclinic-springboot
+    depends_on:
+      - database-petclinic
+    restart: always
+    ports:
+      - "9090:9090"
+    networks:
+      - petclinic_default
+  
+  #FRONTEND
+  petclinic-frontend:
+    build:
+      context: ./petclinic-frontend
+      dockerfile: Dockerfile
+    container_name: petclinic-frontend
+    ports:
+      - "4200:80"
+    networks:
+      - petclinic_default
+
+networks:
+  petclinic_default:
